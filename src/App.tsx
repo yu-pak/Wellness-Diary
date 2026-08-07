@@ -325,7 +325,7 @@ function BottomNav({active,onNav}:{active:Screen;onNav:(s:Screen)=>void}) {
 
   return (
     <div style={{
-      position:'absolute', bottom:20, left:0, right:0,
+      position:'fixed', bottom:20, left:0, right:0,
       display:'flex', justifyContent:'center',
       zIndex:20, pointerEvents:'none',
     }}>
