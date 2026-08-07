@@ -1,0 +1,10 @@
+{
+  "description": "Track your wellness journey with daily stats and motivational phrases, designed to help users reflect and improve their mental and emotional health.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
