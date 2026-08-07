@@ -2227,15 +2227,12 @@ export default function App() {
   return (
     <DarkCtx.Provider value={isDark}>
     <div style={{
-      width:390,minHeight:844,
+      width:'100%',
+      height:'100%',
       background:isDark?'#000000':'#F2F2F7',
-      borderRadius:52,
-      overflow:'hidden',
-      boxShadow:isDark
-        ?'0 40px 100px rgba(0,0,0,0.55), 0 0 0 10px #111, 0 0 0 12px #222'
-        :'0 40px 100px rgba(0,0,0,0.22), 0 0 0 10px #d8d8e0, 0 0 0 12px #e4e4ec',
       position:'relative',display:'flex',flexDirection:'column',
       transition:'background 0.3s',
+      overflow:'hidden',
     }}>
       {/* Ambient gradient mesh */}
       <div style={{position:'absolute',inset:0,pointerEvents:'none',zIndex:0}}>
