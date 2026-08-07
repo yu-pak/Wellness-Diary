@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,300;0,14..32,400;0,14..32,500;0,14..32,600;0,14..32,700;1,14..32,400&display=swap');
+@import 'tailwindcss';
+
+:root {
+  /* iOS system palette */
+  --blue:    #007AFF;
+  --green:   #34C759;
+  --orange:  #FF9500;
+  --pink:    #FF2D55;
+  --purple:  #AF52DE;
+  --indigo:  #5856D6;
+  --teal:    #5AC8FA;
+  --yellow:  #FFCC00;
+  --red:     #FF3B30;
+  --mint:    #00C7BE;
+
+  /* Text */
+  --fg:      #1C1C1E;
+  --fg-sub:  rgba(60,60,67,0.75);
+  --fg-muted:rgba(60,60,67,0.38);
+  --fg-inv:  #ffffff;
+
+  /* Surfaces */
+  --bg:      #F2F2F7;
+  --glass:   rgba(255,255,255,0.72);
+  --glass-hi:rgba(255,255,255,0.85);
+  --glass-lo:rgba(255,255,255,0.52);
+  --glass-tint: rgba(255,255,255,0.60);
+
+  /* Borders */
+  --border:     rgba(60,60,67,0.12);
+  --border-hi:  rgba(255,255,255,0.90);
+  --border-lo:  rgba(60,60,67,0.06);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow:    0 4px 16px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04), inset 0 1px 0 rgba(255,255,255,0.85);
+  --shadow-md: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,0.90);
+  --shadow-lg: 0 16px 48px rgba(0,0,0,0.12), 0 4px 16px rgba(0,0,0,0.06), inset 0 1px 0 rgba(255,255,255,1);
+  --shadow-float: 0 20px 60px rgba(0,0,0,0.14), 0 4px 16px rgba(0,0,0,0.08), inset 0 1px 0 rgba(255,255,255,1);
+
+  --radius-sm: 12px;
+  --radius:    18px;
+  --radius-lg: 26px;
+  --radius-xl: 36px;
+  --radius-pill: 999px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #e8e8f0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#root {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1, h2, h3 { font-family: 'Inter', sans-serif; letter-spacing: -0.025em; }
+.serif { font-family: 'DM Serif Display', serif; }
+
+::-webkit-scrollbar { width: 0; height: 0; }
+
+input, textarea, select { font-family: 'Inter', sans-serif; }
+
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  border-radius: 99px;
+  outline: none;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.22), 0 0 0 0.5px rgba(0,0,0,0.06);
+}
+
+button { cursor: pointer; border: none; background: none; font-family: 'Inter', sans-serif; }
+textarea { resize: none; outline: none; border: none; background: transparent; }
+input { outline: none; }
+
+/* Liquid glass mixin classes */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(40px) saturate(1.8);
+  -webkit-backdrop-filter: blur(40px) saturate(1.8);
+  border: 1px solid var(--border-hi);
+  box-shadow: var(--shadow);
+}
