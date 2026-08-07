@@ -2201,7 +2201,7 @@ function BloomScreen() {
 
 // ─── Root ─────────────────────────────────────────────────────────────────────
 
-export default function App() {
+function MainApp() {
   const [screen,setScreen]=useState<Screen>('welcome')
   const [bloomOpen,setBloomOpen]=useState(false)
   const [isDark,setIsDark]=useState(false)
@@ -2314,4 +2314,26 @@ export default function App() {
     </div>
     </DarkCtx.Provider>
   )
+}
+
+export default function App() {
+  return (
+    <div className="min-h-screen bg-neutral-900 flex items-center justify-center sm:p-4 overflow-auto">
+      <div style={{
+        width:'100%',
+        maxWidth:390,
+        height:'100vh',
+        maxHeight:844,
+        background:'#000000',
+        overflow:'hidden',
+        position:'relative',
+        display:'flex',
+        flexDirection:'column',
+      }} className="sm:rounded-[52px] sm:border-[12px] sm:border-[#e4e4ec] sm:shadow-2xl scale-[0.85] sm:scale-95 origin-center transition-transform">
+        <div style={{position:'relative',zIndex:1,display:'flex',flexDirection:'column',flex:1,overflow:'hidden'}}>
+          <MainApp />
+        </div>
+      </div>
+    </div>
+  );
 }
