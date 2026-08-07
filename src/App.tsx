@@ -2201,7 +2201,7 @@ function BloomScreen() {
 
 // ─── Root ─────────────────────────────────────────────────────────────────────
 
-function MainApp() {
+export default function App() {
   const [screen,setScreen]=useState<Screen>('welcome')
   const [bloomOpen,setBloomOpen]=useState(false)
   const [isDark,setIsDark]=useState(false)
@@ -2227,12 +2227,15 @@ function MainApp() {
   return (
     <DarkCtx.Provider value={isDark}>
     <div style={{
-      width:'100%',
-      height:'100%',
+      width:390,minHeight:844,
       background:isDark?'#000000':'#F2F2F7',
+      borderRadius:52,
+      overflow:'hidden',
+      boxShadow:isDark
+        ?'0 40px 100px rgba(0,0,0,0.55), 0 0 0 10px #111, 0 0 0 12px #222'
+        :'0 40px 100px rgba(0,0,0,0.22), 0 0 0 10px #d8d8e0, 0 0 0 12px #e4e4ec',
       position:'relative',display:'flex',flexDirection:'column',
       transition:'background 0.3s',
-      overflow:'hidden',
     }}>
       {/* Ambient gradient mesh */}
       <div style={{position:'absolute',inset:0,pointerEvents:'none',zIndex:0}}>
@@ -2311,26 +2314,4 @@ function MainApp() {
     </div>
     </DarkCtx.Provider>
   )
-}
-
-export default function App() {
-  return (
-    <div className="min-h-screen bg-neutral-900 flex items-center justify-center sm:p-4 overflow-auto">
-      <div style={{
-        width:'100%',
-        maxWidth:390,
-        height:'100vh',
-        maxHeight:844,
-        background:'#000000',
-        overflow:'hidden',
-        position:'relative',
-        display:'flex',
-        flexDirection:'column',
-      }} className="sm:rounded-[52px] sm:border-[12px] sm:border-[#e4e4ec] sm:shadow-2xl">
-        <div style={{position:'relative',zIndex:1,display:'flex',flexDirection:'column',flex:1,overflow:'hidden'}}>
-          <MainApp />
-        </div>
-      </div>
-    </div>
-  );
 }
